@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xsd:element name="Configuration">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="CollectionFile" type="xsd:string" />
+        <xsd:element name="Tasks">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="DeckTask" type="DeckTask">
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="DeckTask">
+  </xsd:complexType>
+  <xs:complexType name="DownloadIpa">
+    <xs:complexContent>
+      <xs:extension base ="DeckTask">
+        <xsd:sequence>
+          <xsd:element name="TargetModelName" type="xsd:string" />
+          <xsd:element name="ExpressionField" type="xsd:string" />
+          <xsd:element minOccurs="0" name="IpaField" type="xsd:string" />
+        </xsd:sequence>
+      </xs:extension>
+    </xs:complexContent>  
+  </xs:complexType>
+  <xs:complexType name="DownloadPronunciation">
+    <xs:complexContent>
+      <xs:extension base ="DeckTask">
+        <xsd:sequence>
+          <xsd:element name="TargetModelName" type="xsd:string" />
+          <xsd:element name="ExpressionField" type="xsd:string" />
+          <xsd:element minOccurs="0" name="SoundField" type="xsd:string" />
+        </xsd:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DownloadSampleSentences">
+    <xs:complexContent>
+      <xs:extension base ="DeckTask">
+        <xsd:sequence>
+          <xsd:element name="TargetModelName" type="xsd:string" />
+          <xsd:element name="ExpressionField" type="xsd:string" />
+          <xsd:element minOccurs="0" name="SamplesField" type="xsd:string" />
+        </xsd:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

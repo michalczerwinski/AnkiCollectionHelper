@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0EE7DAB5-A248-4598-A463-B85E390F34A4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnkiCollectionHelper</RootNamespace>
+    <AssemblyName>AnkiCollectionHelper</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FSharp.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\ScrapySharp.2.2.63\lib\net40\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ScrapySharp.2.2.63\lib\net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ScrapySharp">
+      <HintPath>..\packages\ScrapySharp.2.2.63\lib\net40\ScrapySharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ScrapySharp.Core">
+      <HintPath>..\packages\ScrapySharp.2.2.63\lib\net40\ScrapySharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Anki\Collection.cs" />
+    <Compile Include="Anki\DbModel\DeckModel.cs" />
+    <Compile Include="Anki\DbModel\DeckModels.cs" />
+    <Compile Include="Anki\DbModel\Decks.cs" />
+    <Compile Include="Anki\DbModel\ModelField.cs" />
+    <Compile Include="Anki\DbModel\Note.cs" />
+    <Compile Include="Config\Configuration.cs" />
+    <Compile Include="Config\DeckTask.cs" />
+    <Compile Include="Tasks\DownloadIpa.cs" />
+    <Compile Include="Tasks\DownloadPronunciation.cs" />
+    <Compile Include="Tasks\DownloadSampleSentences.cs" />
+    <Compile Include="Helpers\EnglishHelper.cs" />
+    <Compile Include="Helpers\EpochHelper.cs" />
+    <Compile Include="Helpers\HtmlAgilityHelper.cs" />
+    <Compile Include="Helpers\HtmlDocumentHelper.cs" />
+    <Compile Include="Helpers\Extractor.cs" />
+    <Compile Include="Helpers\StreamHelper.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="Helpers\StringHelper2.cs" />
+    <Compile Include="Helpers\WebHelper.cs" />
+    <Compile Include="Helpers\XmlSerializationHelper.cs" />
+    <Compile Include="Helpers\KindleHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlLite\AsyncTableQuery.cs" />
+    <Compile Include="SqlLite\AutoIncrementAttribute.cs" />
+    <Compile Include="SqlLite\BaseTableQuery.cs" />
+    <Compile Include="SqlLite\CollationAttribute.cs" />
+    <Compile Include="SqlLite\ColumnAttribute.cs" />
+    <Compile Include="SqlLite\CreateFlags.cs" />
+    <Compile Include="SqlLite\CreateTablesResult.cs" />
+    <Compile Include="SqlLite\IgnoreAttribute.cs" />
+    <Compile Include="SqlLite\IndexedAttribute.cs" />
+    <Compile Include="SqlLite\MaxLengthAttribute.cs" />
+    <Compile Include="SqlLite\NotNullAttribute.cs" />
+    <Compile Include="SqlLite\NotNullConstraintViolationException.cs" />
+    <Compile Include="SqlLite\Orm.cs" />
+    <Compile Include="SqlLite\PreparedSqlLiteInsertCommand.cs" />
+    <Compile Include="SqlLite\PrimaryKeyAttribute.cs" />
+    <Compile Include="SqlLite\SQLiteException.cs" />
+    <Compile Include="SqlLite\SQLite3.cs" />
+    <Compile Include="SqlLite\SQLiteAsyncConnection.cs" />
+    <Compile Include="SqlLite\SQLiteCommand.cs" />
+    <Compile Include="SqlLite\SQLiteConnection.cs" />
+    <Compile Include="SqlLite\SQLiteConnectionPool.cs" />
+    <Compile Include="SqlLite\SQLiteConnectionString.cs" />
+    <Compile Include="SqlLite\SQLiteConnectionWithLock.cs" />
+    <Compile Include="SqlLite\SQLiteOpenFlags.cs" />
+    <Compile Include="SqlLite\TableAttribute.cs" />
+    <Compile Include="SqlLite\TableMapping.cs" />
+    <Compile Include="SqlLite\TableQuery.cs" />
+    <Compile Include="SqlLite\UniqueAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="configuration.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

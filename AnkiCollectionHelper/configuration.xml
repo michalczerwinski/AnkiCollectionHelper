@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CollectionFile>c:\Users\michal.czerwinski\Documents\Anki\User 1\collection.anki2</CollectionFile>
+  <Tasks>
+    <DeckTask xsi:type="DownloadIpa">
+      <TargetModelName>Vocabulary(optional reversed card)</TargetModelName>
+      <ExpressionField>Expression</ExpressionField>
+      <IpaField>IPA</IpaField>
+    </DeckTask>
+    <DeckTask xsi:type="DownloadPronunciation">
+      <TargetModelName>Vocabulary(optional reversed card)</TargetModelName>
+      <ExpressionField>Expression</ExpressionField>
+      <SoundField>Pronunciation</SoundField>
+    </DeckTask>
+    <DeckTask xsi:type="DownloadSampleSentences">
+      <TargetModelName>Vocabulary(optional reversed card)</TargetModelName>
+      <ExpressionField>Expression</ExpressionField>
+      <SamplesField>Samples</SamplesField>
+    </DeckTask>
+  </Tasks>
+</Configuration>
