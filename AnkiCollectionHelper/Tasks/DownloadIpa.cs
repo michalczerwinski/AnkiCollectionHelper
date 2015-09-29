@@ -14,10 +14,11 @@ namespace AnkiCollectionHelper.Tasks
         {
             var expression = note.GetField(ExpressionField);
             var pronunciation = HtmlAgilityHelper.ExtractText(note.GetField(IpaField));
-            Console.Write("Downloading IPA for: " + expression);
 
             if (string.IsNullOrWhiteSpace(pronunciation))
             {
+                Console.Write("Downloading IPA for: " + expression);
+
                 expression = EnglishHelper.GetNormalizedVocabulary(expression);
                 pronunciation = Extractor.GetPronunciation(expression);
 
@@ -32,9 +33,10 @@ namespace AnkiCollectionHelper.Tasks
                     Console.WriteLine(" [OK]");
                     return true;
                 }
+
+                Console.WriteLine(" [Not found]");
             }
 
-            Console.WriteLine(" [Not found]");
             return false;
         }
     }

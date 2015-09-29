@@ -21,8 +21,9 @@ namespace AnkiCollectionHelper.Tasks
             }
 
             expression = EnglishHelper.GetNormalizedVocabulary(expression);
-            Console.Write("Downloading samples for: " + expression);
             samples = Extractor.GetSamplesFromCambridgeLearnerDictionary(expression);
+
+            Console.Write("Downloading samples for: " + expression);
 
             if (string.IsNullOrWhiteSpace(samples))
             {

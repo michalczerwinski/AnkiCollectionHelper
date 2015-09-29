@@ -18,10 +18,11 @@ namespace AnkiCollectionHelper.Tasks
             string normalizedName = expression.Remove("<", ">", "/");
             var fileName = Path.ChangeExtension(normalizedName, ".mp3");
             var destinationFullName = Path.Combine(mediaFolder, fileName);
-            Console.Write("Downloading pronunciation for: " + expression);
 
             if (string.IsNullOrWhiteSpace(sound))
             {
+                Console.Write("Downloading pronunciation for: " + expression);
+
                 expression = EnglishHelper.GetNormalizedVocabulary(expression);
                 var temporaryFile = Extractor.DownloadPronunciation(expression);
 
@@ -32,9 +33,9 @@ namespace AnkiCollectionHelper.Tasks
                     Console.WriteLine(" [OK]");
                     return true;
                 }
+                Console.WriteLine(" [Not found]");
             }
 
-            Console.WriteLine(" [Not found]");
             return false;
         }
     }
